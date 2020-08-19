@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>XYZEmployee Details</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Oswald&display=swap" rel="stylesheet"> 
+    </head>
+    
+    <body>
+        <div class="navbar nav">
+        {% block content  %}
+        {% if user.is_authenticated %}
+            <a href = "{% url 'signup' %}"><button class="btn-danger logout">LOGOUT</button></a>
+            <img class="logoimage" src="{% static 'logo.png' %}" height="50" width="60">
+            <h1 class="logotext"><b class="typeo">XYZ </b><b class="typet">Employee</b></h1>
+            {% else %}
+             <p>You are not logged in</p>
+            <a href="{% url 'signin' %}">login</a>
+            {% endif %}
+            {% endblock %}
+        </div>
+        <p class="welcome">WELCOME <b id="">{{user.first_name}}</b></p>
+        <p class="welcome">EMAIL-ID: <b id="">{{user.email}}</b></p>
+        
+        <div class="card signup" style="width: 39rem; height: 12rem;";>
+            <div class="card logo" style="width: 39rem; height: 3rem;";>
+               <img class="logoimage1" src="{% static 'logo.png' %}"heingh="50" width="50">
+               <h1 class="logotext1"><b class="typeo">UNDER </b><b class="typet">PROCESS</b></h1>
+            </div>
+            <h2 class="heading1">VERIFICATION UNDER PROCESS</h2>
+            <form action="" method="post">
+            {% csrf_token %}
+               <input type="text" class="hidden" id="cred1" name="email">
+               <input type="text" class="hidden" id="cred2" name="name">
+                <button type="submit" class="btn btn-lg btn-success butn">SHOW DETAILS</button>
+            </form>
+
+            
+        </div>
+            
+        <script type="text/javascript" src="{% static 'js/retrieve.js' %}"></script>
+    </body>
+</html>

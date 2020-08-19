@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>XYZEmployee Signup</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Oswald&display=swap" rel="stylesheet"> 
+    </head>
+    
+    <body>
+       
+        <div class="navbar nav">
+            <img class="logoimage" src="{% static 'logo.png' %}" height="50" width="60">
+            <h1 class="logotext"><b class="typeo">XYZ</b><b class="typet">Employee</b></h1>
+        </div>
+        
+        <div class="card signup" style="width: 39rem; height: 27rem;";>
+           <div class="card logo" style="width: 39rem; height: 3rem;";>
+               <img class="logoimage1" src="{% static 'logo.png' %}" heingh="50" width="50">
+               <h1 class="logotext1"><b class="typeo">Sign</b><b class="typet">Up</b></h1>
+            </div>
+            
+            <form action="" method="post">
+            {% csrf_token %}
+                <div class="part">
+                    <label class="name">Employee Name &emsp; &emsp; &nbsp; &emsp; &nbsp;</label>
+                    <input type="text" class="field" name="name" id="name">
+                </div>
+                
+               
+                
+                <div class="part">
+                    <label class="name">Employee Email Address &emsp; &nbsp; </label>
+                    <input type="email" class="field" name="email" id="email">
+                </div>
+
+                <div class="part">
+                    <label class="name">Employee Username &emsp; &nbsp; &emsp; </label>
+                    <input type="username" class="field" name="username" id="username">
+                </div>
+                
+                <div class="part">
+                    <label class="name">Employee Password &emsp; &emsp; &nbsp; &nbsp;</label>
+                    <input type="password" class="field" name="password" id="password">
+                </div>
+                
+                <div class="part">
+                    <label class="name">Re-Enter Employee Password</label>
+                    <input type="password" class="field" name="repassword" id="repassword">
+                </div>
+                
+                <div class="link">
+                    <a href="signin">Already a User? SignIn</a>
+                </div>
+                <div class="but">
+                    <input type="submit" class="btn btn-lg btn-primary buttonsignup" value="Sign Up">
+                </div>
+            </form>
+        </div>
+        <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        </div>
+    </body>
+
+</html>

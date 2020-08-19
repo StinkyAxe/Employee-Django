@@ -1,0 +1,144 @@
+body
+{
+    background-color: #4d4c4c;
+}
+
+.typeo
+{
+    color: #b72005;
+    font-family: 'Oswald', sans-serif;
+}
+
+.typet
+{
+    color: #d38d0b;
+    font-family: 'Oswald', sans-serif;
+}
+
+.logo
+{
+   background-color: #c2c1c1;
+    height: 60px;
+    width:100%;
+}
+
+.logotext
+{
+    position: relative;
+    right: 1020px;
+    top:3px;
+}
+
+.logoimage
+{
+    position: relative;
+    right:550px;
+}
+
+.nav
+{
+    background-color: aliceblue;
+    height:70px;
+}
+
+.logoimage1
+{
+    position: relative;
+    left: 30px;
+}
+
+.logotext1
+{
+    position: relative;
+    left: 85px;
+    bottom:45px;
+}
+
+.signup
+{
+    position: relative;
+    top:60px;
+    left:450px;
+    background-color: #a1a1a1;
+}
+
+.part
+{
+    position: relative;
+    left: 150px;
+    top: 50px;
+    padding: 4px;
+    font-family: 'Caveat', cursive;
+    font-family: 'Oswald', sans-serif;
+    color: #0558b0;
+}
+
+.field
+{
+    background-color: #c2c1c1;
+    border-radius: 4px;
+    border-style: none;
+}
+
+.but
+{
+    position: relative;
+    left: 270px;
+    top: 100px;
+}
+
+.buttonsignup
+{
+    border-radius: 5px;
+    border-style: none;
+}
+
+.link
+{
+    position: relative;
+    left:240px;
+    top:150px;
+    font-family: 'Caveat', cursive;
+    font-family: 'Oswald', sans-serif;
+    color: #72008c;
+}
+
+
+.welcome
+{
+    font-size: 30px;
+    font-family: 'Caveat', cursive;
+    font-family: 'Oswald', sans-serif;
+    color: aqua;
+    
+}
+
+.heading
+{
+    position: relative;
+    left:220px;
+    top:30px;
+    font-size: 30px;
+    font-family: 'Caveat', cursive;
+    font-family: 'Oswald', sans-serif;
+    color: aliceblue;
+}
+
+.alert
+{
+    color: darkred;
+    position: relative;
+    right: 30px;
+}
+
+.hidden
+{
+    visibility: hidden;
+}
+
+.logout
+{
+    float: right;
+    position: relative;
+    left:1200px;
+}

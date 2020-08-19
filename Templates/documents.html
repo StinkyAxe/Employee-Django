@@ -1,0 +1,125 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>XYZ Employee Academic Details</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/documents.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Oswald&display=swap" rel="stylesheet"> 
+    </head>
+    
+    <body>
+        <div class="navbar nav">
+              {% block content  %}
+        {% if user.is_authenticated %}
+            <a href = "{% url 'signup' %}"><button class="btn-danger logout">LOGOUT</button></a>
+            <img class="logoimage" src="{% static 'logo.png' %}" height="50" width="60">
+            <h1 class="logotext"><b class="typeo">XYZ </b><b class="typet">Employee</b></h1>
+            {% else %}
+             <p>You are not logged in</p>
+            <a href="{% url 'signin' %}">login</a>
+            {% endif %}
+            {% endblock %}
+        </div>
+        <p class="welcome">WELCOME <b id="">{{user.first_name}}</b></p>
+        <p class="welcome">EMAIL-ID: <b id="">{{user.email}}</b></p>
+        
+        <div class="card signup" style="width: 39rem; height: 65rem;";>
+            <div class="card logo" style="width: 39rem; height: 3rem;";>
+               <img class="logoimage1" src="{% static 'logo.png' %}" heingh="50" width="50">
+               <h1 class="logotext1"><b class="typeo">ACADEMIC</b><b class="typet">INFORMATION</b></h1>
+            </div>
+            
+            <form action="" method="post">
+            {% csrf_token %}
+                
+                <h2 class="heading">CLASS-10</h2>
+                
+                <div class="part">
+                    <label class="name">Roll Number &emsp;</label>
+                    <input type="text" class="field" name="tenroll">
+                </div>
+                
+                <div class="part">
+                    <label class="name">Board &emsp; &emsp; &emsp;</label>
+                    <input type="text" class="field" name="tenboard">
+                </div>
+                
+                <div class="part">
+                    <label class="name">School Name &emsp;</label>
+                    <input type="text" class="field" name="tenschool">
+                </div>
+                
+                <div class="part">
+                    <label class="name">Percentage &emsp;&nbsp; &nbsp;</label>
+                    <input type="number" class="field" name="tenpercent">
+                </div>
+                
+                <br><br>
+                <h2 class="heading">CLASS-12</h2>
+                <div class="part">
+                    <label class="name">Roll Number &emsp;</label>
+                    <input type="text" class="field" name="twelveroll">
+                </div>
+                
+                <div class="part">
+                    <label class="name">Board &emsp; &emsp; &emsp;</label>
+                    <input type="text" class="field" name="twelveboard">
+                </div>
+                
+                <div class="part">
+                    <label class="name">School Name &emsp; </label>
+                    <input type="text" class="field" name="twelveschool">
+                </div>
+                
+                <div class="part">
+                    <label class="name">Percentage &nbsp; &emsp;</label>
+                    <input type="number" class="field" name="twelvepercent">
+                </div>
+                
+                <br><br>
+                <h2 class="heading">GRADUATION</h2>
+                <div class="part">
+                    <label class="name">Degree Name &emsp;</label>
+                    <input type="text" class="field" name="degree">
+                </div>
+                
+                <div class="part">
+                    <label class="name">University Name</label>
+                    <input type="text" class="field" name="university">
+                </div>
+                
+                <div class="part">
+                    <label class="name">College Name &emsp;</label>
+                    <input type="text" class="field" name="college">
+                </div>
+                
+                <div class="part">
+                    <label class="name">University Roll Number</label>
+                    <input type="text" class="field" name="roll">
+                </div>
+                
+                <div class="part">
+                    <label class="name">Percentage (Average of all semesters)</label>
+                    <input type="number" class="field" name="percent">
+                </div>  
+                <div class="part">
+                    <label class="name alert">!!ALERT!! YOU WILL NOT BE ABLE TO CHANGE YOUR INFORMATION</label>
+                </div>
+                
+                <div class="but">
+                    <button type="submit" class="btn btn-lg btn-success outline buttonsignup">SUBMIT</button>
+                </div>
+                
+                <input type="text" class="hidden" id="cred1" name="email">
+                <input type="text" class="hidden" id="cred2" name="name">
+            </form>
+        </div>
+        <script type="text/javascript" src="{% static 'js/retrieve.js' %}"></script>
+    </body>
+</html>

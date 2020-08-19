@@ -1,0 +1,1 @@
+This is my first Django project. I know it's very undecorative,inefficvient in handling much requests due some bugs. Logout system is faulty. If you encounter please modify it and you are welcome to edit the source code and also let me know how have you modified it.
