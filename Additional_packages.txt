@@ -1,0 +1,4 @@
+In linux terminal it is required to install these following dependencies to be able to function properly without errors:
+
+sudo apt install libpq-dev python3-dev
+sudo apt install build-essential
